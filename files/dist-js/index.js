@@ -3,7 +3,7 @@ import "./paths-tuenh9TL.js";
 import { F as ALLOWED_LOG_LEVELS, G as hasHelpOrVersion, K as hasRootVersionAlias, L as tryParseLogLevel, U as getVerboseFlag, V as getCommandPathWithRootOptions, W as hasFlag, d as visibleWidth, p as defaultRuntime, r as enableConsoleCapture, w as setVerbose } from "./subsystem-D2xHvZZd.js";
 import { n as isRich, r as theme } from "./theme-CipOb_We.js";
 import { T as toWhatsappJid, l as escapeRegExp, m as normalizeE164, n as assertWebChannel } from "./utils-DwZbjiC4.js";
-import { Mi as resolveCommitHash, Up as deriveSessionKey, Wp as resolveSessionKey, _p as loadSessionStore, d_ as loadConfig, dv as VERSION, gv as loadDotEnv, lf as installUnhandledRejectionHandler, rf as applyTemplate, t as getReplyFromConfig, vg as ensureBinary, yg as promptYesNo, yp as saveSessionStore } from "./reply-CeB3PWQv.js";
+import { Mi as resolveCommitHash, Up as deriveSessionKey, Wp as resolveSessionKey, _p as loadSessionStore, d_ as loadConfig, dv as VERSION, gv as loadDotEnv, lf as installUnhandledRejectionHandler, rf as applyTemplate, t as getReplyFromConfig, vg as ensureBinary, yg as promptYesNo, yp as saveSessionStore } from "./reply-C8St2AJ2.js";
 import "./agent-scope-DvYJ0Ktc.js";
 import "./openclaw-root-3m-COvjr.js";
 import "./logger-BZyLeV9r.js";
@@ -29,18 +29,18 @@ import "./session-cost-usage-BlB91_zm.js";
 import "./prompt-style-ytG4p-pp.js";
 import { t as formatDocsLink } from "./links-D1S6as3q.js";
 import "./cli-utils-BSURvrmb.js";
-import { r as waitForever, t as monitorWebChannel } from "./channel-web-CW0bJfwj.js";
-import "./outbound-CkxqUEe-.js";
-import "./session-DSIbs1rR.js";
-import "./login-C-L4m6Bw.js";
-import { t as createDefaultDeps } from "./deps-D7NU5XxI.js";
+import { r as waitForever, t as monitorWebChannel } from "./channel-web-T1Ql7PO1.js";
+import "./outbound-Brpr9pD9.js";
+import "./session-BzhPUAHg.js";
+import "./login-ic_J3s0r.js";
+import { t as createDefaultDeps } from "./deps-YSFs_3Dn.js";
 import { t as isMainModule } from "./is-main-DzNjpBBb.js";
 import { t as ensureOpenClawCliOnPath } from "./path-env-Ce_2-thI.js";
 import { t as assertSupportedRuntime } from "./runtime-guard-ArRACOk1.js";
 import "./ports-CwWjm1UE.js";
-import { i as getCoreCliCommandsWithSubcommands, n as setProgramContext, o as registerProgramCommands, s as getSubCliCommandsWithSubcommands } from "./program-context-D5t_a4HH.js";
-import "./plugin-registry-0_RLb2QT.js";
-import { n as resolveCliChannelOptions } from "./channel-options-C5pq-uRJ.js";
+import { i as getCoreCliCommandsWithSubcommands, n as setProgramContext, o as registerProgramCommands, s as getSubCliCommandsWithSubcommands } from "./program-context-DduzR_uw.js";
+import "./plugin-registry-mWLgj2jq.js";
+import { n as resolveCliChannelOptions } from "./channel-options-Cb84yItT.js";
 import process$1 from "node:process";
 import { fileURLToPath } from "node:url";
 import { Command, InvalidArgumentError } from "commander";
@@ -495,11 +495,11 @@ function shouldBypassConfigGuard(commandPath) {
 	return false;
 }
 function loadConfigGuardModule() {
-	configGuardModulePromise ??= import("./config-guard-CZltpZ28.js");
+	configGuardModulePromise ??= import("./config-guard-zo_w4MwU.js");
 	return configGuardModulePromise;
 }
 function loadPluginRegistryModule() {
-	pluginRegistryModulePromise ??= import("./plugin-registry-0_RLb2QT.js").then((n) => n.n);
+	pluginRegistryModulePromise ??= import("./plugin-registry-mWLgj2jq.js").then((n) => n.n);
 	return pluginRegistryModulePromise;
 }
 function getRootCommand(command) {

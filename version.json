@@ -1,18 +1,14 @@
 {
   "name": "openclaw-patch-chat-suggestions",
-  "version": "0.1.0",
-  "description": "One-shot patch for chat suggestions composer feature",
+  "version": "0.1.1",
+  "description": "One-shot patch for chat suggestions with selection-aware and auto/manual toggle",
   "targetOpenclawVersion": "v2026.3.13-beta.1",
-  "created": "2026-03-18T06:15:00Z",
-  "payload": {
-    "distJs": "copy all files from files/dist-js/*.js to installed dist/",
-    "controlUi": "replace installed dist/control-ui/ with files/control-ui/"
-  },
+  "created": "2026-03-18T08:29:00Z",
   "changelog": [
-    "Add chat controller with suggestions management",
-    "Add chat view with suggestion composer component",
-    "Add chat-related protocol schemas and server methods",
-    "Patch bundled dist/*.js runtime files",
-    "Patch dist/control-ui/ static assets so UI and backend stay in sync"
+    "Add selectionText param to suggestions API and backend prompt",
+    "Add Auto/Manual toggle via right-click on refresh button",
+    "Add visible status badge and styling for toggle state",
+    "Add selection context hint when suggestions based on selected text",
+    "Add UI state for auto-refresh mode and selection text"
   ]
 }

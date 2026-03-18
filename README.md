@@ -1,9 +1,16 @@
 # OpenClaw Chat Suggestions Patch
 
-Patch version: `0.1.0`  
+Patch version: `0.1.1`  
 Target OpenClaw version: `v2026.3.13-beta.1`
 
 This patch adds context-aware reply suggestions directly into OpenClaw chat, making it faster to respond, refine phrasing, and continue conversations with less manual typing.
+
+## Features
+
+- **Context-aware suggestions** — suggestions based on current conversation context
+- **Selection-aware mode** — when you select text in a message, suggestions focus on that text
+- **Auto/Manual toggle** — right-click the refresh button to toggle auto-refresh mode
+- **Visible state indicators** — shows Auto/Manual and selection context hints
 
 ## Screenshots
 
@@ -28,7 +35,7 @@ cd openclaw-patch-chat-suggestions
 
 ## Install via downloader
 ```bash
-curl -fsSL -o patch-chat-suggestions-downloader.sh https://raw.githubusercontent.com/nykadamec/openclaw_chat-suggestions/v2026.3.13-beta.1/patch-chat-suggestions-downloader.sh
+curl -fsSL -o patch-chat-suggestions-downloader.sh https://raw.githubusercontent.com/nykadamec/openclaw_chat_suggestions/v2026.3.13-beta.1/patch-chat-suggestions-downloader.sh
 bash patch-chat-suggestions-downloader.sh
 ```
 
