@@ -1,6 +1,6 @@
 {
   "name": "openclaw-patch-chat-suggestions",
-  "version": "1.1.0",
+  "version": "0.1.0",
   "description": "One-shot patch for chat suggestions composer feature",
   "targetOpenclawVersion": "v2026.3.13-beta.1",
   "created": "2026-03-18T06:15:00Z",

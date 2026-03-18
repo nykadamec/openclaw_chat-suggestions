@@ -1,14 +1,14 @@
-import "./github-copilot-token-BR9Vlb45.js";
-import { a as resolveGatewayPort, l as resolveStateDir, o as resolveIsNixMode, r as resolveConfigPath } from "./paths-BnSNMlFT.js";
-import { A as shortenHomePath, G as theme, U as colorize, W as isRich, et as isBunRuntime, j as sleep, l as defaultRuntime, q as getResolvedLoggerSettings, tt as isNodeRuntime } from "./logger-Budylr6i.js";
-import { $i as pickPrimaryTailnetIPv4, An as loadGatewayTlsRuntime, Cn as resolveGatewayWindowsTaskName, Da as formatDocsLink, Di as inspectPortUsage, Dn as resolveGatewayCredentialsWithSecretInputs, Ea as formatCliCommand, En as callGateway, Gi as hasAmbiguousGatewayAuthModeConfig, Gn as isRestartEnabled, Ji as resolveGatewayDriftCheckCredentialsFromConfig, Ki as resolveGatewayAuth, Oi as classifyPortListener, On as READ_SCOPE, Or as parseStrictInteger, Qi as resolveGatewayBindHost, Sn as resolveGatewaySystemdServiceName, Wi as resolveSecretRefValues, Xi as trimToUndefined, Yi as readGatewayTokenEnv, Zi as isLoopbackHost, _a as resolveSecretInputRef, _n as GATEWAY_SERVICE_KIND, aa as createConfigIO, b as randomToken, bn as resolveGatewayProfileSuffix, ca as readConfigFileSnapshot, d as withProgress, da as writeConfigFile, dn as assertNoCmdLineBreak, fa as secretRefKey, fi as GATEWAY_CLIENT_MODES, fn as parseCmdSetAssignment, ga as hasConfiguredSecretInput, gn as GATEWAY_LAUNCH_AGENT_LABEL, ha as sanitizeTerminalText, hn as findGatewayPidsOnPortSync, jn as killProcessTree, ki as formatPortDiagnostics, kn as GatewayClient, kr as parseStrictPositiveInteger, ln as parseCmdScriptCommandLine, ma as VERSION, mn as splitArgsPreservingQuotes, n as loadAuthProfileStoreForSecretsRuntime, pa as collectConfigServiceEnvVars, pi as GATEWAY_CLIENT_NAMES, pn as renderCmdSetAssignment, qi as isGatewaySecretRefUnavailableError, sa as readBestEffortConfig, ta as formatErrorMessage, un as quoteCmdScriptArg, vn as GATEWAY_SERVICE_MARKER, wn as resolveLegacyGatewayLaunchAgentLabels, x as resolveControlUiLinks, xn as resolveGatewayServiceDescription, yn as resolveGatewayLaunchAgentLabel } from "./auth-profiles-RJ6k7NRX.js";
-import { Vt as runCommandWithTimeout } from "./query-expansion-BMQzl41m.js";
-import { a as isWSLEnv, i as isWSL } from "./fetch-A2N9r46T.js";
-import fsSync from "node:fs";
+import "./github-copilot-token-CTe_ZN99.js";
+import { a as resolveGatewayPort, l as resolveStateDir, o as resolveIsNixMode, r as resolveConfigPath } from "./paths-jtwudEDq.js";
+import { A as shortenHomePath, G as theme, U as colorize, W as isRich, et as isBunRuntime, j as sleep, l as defaultRuntime, q as getResolvedLoggerSettings, tt as isNodeRuntime } from "./logger-mQKrXyAc.js";
+import { $i as pickPrimaryTailnetIPv4, An as loadGatewayTlsRuntime, Cn as resolveGatewayWindowsTaskName, Da as formatDocsLink, Di as inspectPortUsage, Dn as resolveGatewayCredentialsWithSecretInputs, Ea as formatCliCommand, En as callGateway, Gi as hasAmbiguousGatewayAuthModeConfig, Gn as isRestartEnabled, Ji as resolveGatewayDriftCheckCredentialsFromConfig, Ki as resolveGatewayAuth, Oi as classifyPortListener, On as READ_SCOPE, Or as parseStrictInteger, Qi as resolveGatewayBindHost, Sn as resolveGatewaySystemdServiceName, Wi as resolveSecretRefValues, Xi as trimToUndefined, Yi as readGatewayTokenEnv, Zi as isLoopbackHost, _a as resolveSecretInputRef, _n as GATEWAY_SERVICE_KIND, aa as createConfigIO, b as randomToken, bn as resolveGatewayProfileSuffix, ca as readConfigFileSnapshot, d as withProgress, da as writeConfigFile, dn as assertNoCmdLineBreak, fa as secretRefKey, fi as GATEWAY_CLIENT_MODES, fn as parseCmdSetAssignment, ga as hasConfiguredSecretInput, gn as GATEWAY_LAUNCH_AGENT_LABEL, ha as sanitizeTerminalText, hn as findGatewayPidsOnPortSync, jn as killProcessTree, ki as formatPortDiagnostics, kn as GatewayClient, kr as parseStrictPositiveInteger, ln as parseCmdScriptCommandLine, ma as VERSION, mn as splitArgsPreservingQuotes, n as loadAuthProfileStoreForSecretsRuntime, pa as collectConfigServiceEnvVars, pi as GATEWAY_CLIENT_NAMES, pn as renderCmdSetAssignment, qi as isGatewaySecretRefUnavailableError, sa as readBestEffortConfig, ta as formatErrorMessage, un as quoteCmdScriptArg, vn as GATEWAY_SERVICE_MARKER, wn as resolveLegacyGatewayLaunchAgentLabels, x as resolveControlUiLinks, xn as resolveGatewayServiceDescription, yn as resolveGatewayLaunchAgentLabel } from "./auth-profiles-L6lWmx2L.js";
+import { Vt as runCommandWithTimeout } from "./query-expansion-BIMwPSMg.js";
+import { a as isWSLEnv, i as isWSL } from "./fetch-DUKS8evA.js";
+import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
-import fs from "node:fs/promises";
+import fs$1 from "node:fs/promises";
 import { execFile, spawn, spawnSync } from "node:child_process";
 import "node:process";
 import { randomUUID } from "node:crypto";
@@ -40,23 +40,23 @@ async function resolveCliEntrypointPathForService() {
 	const normalized = path.resolve(argv1);
 	const resolvedPath = await resolveRealpathSafe(normalized);
 	if (/[/\\]dist[/\\].+\.(cjs|js|mjs)$/.test(resolvedPath)) {
-		await fs.access(resolvedPath);
+		await fs$1.access(resolvedPath);
 		if (/[/\\]dist[/\\].+\.(cjs|js|mjs)$/.test(normalized) && normalized !== resolvedPath) try {
-			await fs.access(normalized);
+			await fs$1.access(normalized);
 			return normalized;
 		} catch {}
 		return resolvedPath;
 	}
 	const distCandidates = buildDistCandidates(resolvedPath, normalized);
 	for (const candidate of distCandidates) try {
-		await fs.access(candidate);
+		await fs$1.access(candidate);
 		return candidate;
 	} catch {}
 	throw new Error(`Cannot find built CLI at ${distCandidates.join(" or ")}. Run "pnpm build" first, or use dev mode.`);
 }
 async function resolveRealpathSafe(inputPath) {
 	try {
-		return await fs.realpath(inputPath);
+		return await fs$1.realpath(inputPath);
 	} catch {
 		return inputPath;
 	}
@@ -116,7 +116,7 @@ async function resolveBinaryPath(binary) {
 	try {
 		const resolved = execFileSync(cmd, [binary], { encoding: "utf8" }).trim().split(/\r?\n/)[0]?.trim();
 		if (!resolved) throw new Error("empty");
-		await fs.access(resolved);
+		await fs$1.access(resolved);
 		return resolved;
 	} catch {
 		if (binary === "bun") throw new Error("Bun not found in PATH. Install bun: https://bun.sh");
@@ -135,7 +135,7 @@ async function resolveCliProgramArguments(params) {
 		if (params.dev) {
 			const repoRoot = resolveRepoRootForDev();
 			const devCliPath = path.join(repoRoot, "src", "index.ts");
-			await fs.access(devCliPath);
+			await fs$1.access(devCliPath);
 			return {
 				programArguments: [
 					isBunRuntime(execPath) ? execPath : await resolveBunPath(),
@@ -163,7 +163,7 @@ async function resolveCliProgramArguments(params) {
 	}
 	const repoRoot = resolveRepoRootForDev();
 	const devCliPath = path.join(repoRoot, "src", "index.ts");
-	await fs.access(devCliPath);
+	await fs$1.access(devCliPath);
 	if (isBunRuntime(execPath)) return {
 		programArguments: [
 			execPath,
@@ -418,13 +418,13 @@ async function resolveStableNodePath(nodePath) {
 	const pathModule = nodePath.includes("\\") ? path.win32 : path.posix;
 	const optPath = pathModule.join(prefix, "opt", formula, "bin", "node");
 	try {
-		await fs.access(optPath);
+		await fs$1.access(optPath);
 		return optPath;
 	} catch {}
 	if (formula === "node") {
 		const binPath = pathModule.join(prefix, "bin", "node");
 		try {
-			await fs.access(binPath);
+			await fs$1.access(binPath);
 			return binPath;
 		} catch {}
 	}
@@ -492,7 +492,7 @@ function isSystemNodePath(nodePath, env = process.env, platform = process.platfo
 async function resolveSystemNodePath(env = process.env, platform = process.platform) {
 	const candidates = buildSystemNodeCandidates(env, platform);
 	for (const candidate of candidates) try {
-		await fs.access(candidate);
+		await fs$1.access(candidate);
 		return candidate;
 	} catch {}
 	return null;
@@ -743,7 +743,7 @@ const renderEnvDict = (env) => {
 };
 async function readLaunchAgentProgramArgumentsFromFile(plistPath) {
 	try {
-		const plist = await fs.readFile(plistPath, "utf8");
+		const plist = await fs$1.readFile(plistPath, "utf8");
 		const programMatch = plist.match(/<key>ProgramArguments<\/key>\s*<array>([\s\S]*?)<\/array>/i);
 		if (!programMatch) return null;
 		const args = Array.from(programMatch[1].matchAll(/<string>([\s\S]*?)<\/string>/gi)).map((match) => plistUnescape(match[1] ?? "").trim());
@@ -1006,14 +1006,14 @@ async function bootstrapLaunchAgentOrThrow(params) {
 	throw new Error(`launchctl bootstrap failed: ${detail}`);
 }
 async function ensureSecureDirectory(targetPath) {
-	await fs.mkdir(targetPath, {
+	await fs$1.mkdir(targetPath, {
 		recursive: true,
 		mode: LAUNCH_AGENT_DIR_MODE
 	});
 	try {
-		const mode = (await fs.stat(targetPath)).mode & 511;
+		const mode = (await fs$1.stat(targetPath)).mode & 511;
 		const tightenedMode = mode & -19;
-		if (tightenedMode !== mode) await fs.chmod(targetPath, tightenedMode);
+		if (tightenedMode !== mode) await fs$1.chmod(targetPath, tightenedMode);
 	} catch {}
 }
 function parseLaunchctlPrint(output) {
@@ -1041,7 +1041,7 @@ async function isLaunchAgentLoaded(args) {
 async function launchAgentPlistExists(env) {
 	try {
 		const plistPath = resolveLaunchAgentPlistPath(env);
-		await fs.access(plistPath);
+		await fs$1.access(plistPath);
 		return true;
 	} catch {
 		return false;
@@ -1077,7 +1077,7 @@ async function uninstallLaunchAgent({ env, stdout }) {
 	]);
 	await execLaunchctl(["unload", plistPath]);
 	try {
-		await fs.access(plistPath);
+		await fs$1.access(plistPath);
 	} catch {
 		stdout.write(`LaunchAgent not found at ${plistPath}\n`);
 		return;
@@ -1086,8 +1086,8 @@ async function uninstallLaunchAgent({ env, stdout }) {
 	const trashDir = path.posix.join(home, ".Trash");
 	const dest = path.join(trashDir, `${label}.plist`);
 	try {
-		await fs.mkdir(trashDir, { recursive: true });
-		await fs.rename(plistPath, dest);
+		await fs$1.mkdir(trashDir, { recursive: true });
+		await fs$1.rename(plistPath, dest);
 		stdout.write(`${formatLine("Moved LaunchAgent to Trash", dest)}\n`);
 	} catch {
 		stdout.write(`LaunchAgent remains at ${plistPath} (could not move)\n`);
@@ -1122,7 +1122,7 @@ async function installLaunchAgent({ env, stdout, programArguments, workingDirect
 		]);
 		await execLaunchctl(["unload", legacyPlistPath]);
 		try {
-			await fs.unlink(legacyPlistPath);
+			await fs$1.unlink(legacyPlistPath);
 		} catch {}
 	}
 	const plistPath = resolveLaunchAgentPlistPathForLabel(env, label);
@@ -1144,11 +1144,11 @@ async function installLaunchAgent({ env, stdout, programArguments, workingDirect
 		stderrPath,
 		environment
 	});
-	await fs.writeFile(plistPath, plist, {
+	await fs$1.writeFile(plistPath, plist, {
 		encoding: "utf8",
 		mode: LAUNCH_AGENT_PLIST_MODE
 	});
-	await fs.chmod(plistPath, LAUNCH_AGENT_PLIST_MODE).catch(() => void 0);
+	await fs$1.chmod(plistPath, LAUNCH_AGENT_PLIST_MODE).catch(() => void 0);
 	await execLaunchctl([
 		"bootout",
 		domain,
@@ -1314,7 +1314,7 @@ function readWindowsListeningPidsOnPortSync(port) {
 }
 function readGatewayProcessArgsSync(pid) {
 	if (process.platform === "linux") try {
-		return parseProcCmdline(fsSync.readFileSync(`/proc/${pid}/cmdline`, "utf8"));
+		return parseProcCmdline(fs.readFileSync(`/proc/${pid}/cmdline`, "utf8"));
 	} catch {
 		return null;
 	}
@@ -1412,7 +1412,7 @@ function resolveTaskUser(env) {
 async function readScheduledTaskCommand(env) {
 	const scriptPath = resolveTaskScriptPath(env);
 	try {
-		const content = await fs.readFile(scriptPath, "utf8");
+		const content = await fs$1.readFile(scriptPath, "utf8");
 		let workingDirectory = "";
 		let commandLine = "";
 		const environment = {};
@@ -1522,7 +1522,7 @@ async function assertSchtasksAvailable() {
 }
 async function isStartupEntryInstalled(env) {
 	try {
-		await fs.access(resolveStartupEntryPath(env));
+		await fs$1.access(resolveStartupEntryPath(env));
 		return true;
 	} catch {
 		return false;
@@ -1692,7 +1692,7 @@ async function restartStartupEntry(env, stdout) {
 async function installScheduledTask({ env, stdout, programArguments, workingDirectory, environment, description }) {
 	await assertSchtasksAvailable();
 	const scriptPath = resolveTaskScriptPath(env);
-	await fs.mkdir(path.dirname(scriptPath), { recursive: true });
+	await fs$1.mkdir(path.dirname(scriptPath), { recursive: true });
 	const taskDescription = resolveGatewayServiceDescription({
 		env,
 		environment,
@@ -1704,7 +1704,7 @@ async function installScheduledTask({ env, stdout, programArguments, workingDire
 		workingDirectory,
 		environment
 	});
-	await fs.writeFile(scriptPath, script, "utf8");
+	await fs$1.writeFile(scriptPath, script, "utf8");
 	const taskName = resolveTaskName(env);
 	const baseArgs = [
 		"/Create",
@@ -1734,12 +1734,12 @@ async function installScheduledTask({ env, stdout, programArguments, workingDire
 			detail
 		})) {
 			const startupEntryPath = resolveStartupEntryPath(env);
-			await fs.mkdir(path.dirname(startupEntryPath), { recursive: true });
+			await fs$1.mkdir(path.dirname(startupEntryPath), { recursive: true });
 			const launcher = buildStartupLauncherScript({
 				description: taskDescription,
 				scriptPath
 			});
-			await fs.writeFile(startupEntryPath, launcher, "utf8");
+			await fs$1.writeFile(startupEntryPath, launcher, "utf8");
 			launchFallbackTaskScript(scriptPath);
 			writeFormattedLines(stdout, [{
 				label: "Installed Windows login item",
@@ -1777,12 +1777,12 @@ async function uninstallScheduledTask({ env, stdout }) {
 	]);
 	const startupEntryPath = resolveStartupEntryPath(env);
 	try {
-		await fs.unlink(startupEntryPath);
+		await fs$1.unlink(startupEntryPath);
 		stdout.write(`${formatLine("Removed Windows login item", startupEntryPath)}\n`);
 	} catch {}
 	const scriptPath = resolveTaskScriptPath(env);
 	try {
-		await fs.unlink(scriptPath);
+		await fs$1.unlink(scriptPath);
 		stdout.write(`${formatLine("Removed task script", scriptPath)}\n`);
 	} catch {
 		stdout.write(`Task script not found at ${scriptPath}\n`);
@@ -2008,7 +2008,7 @@ function resolveSystemdUserUnitPath(env) {
 async function readSystemdServiceExecStart(env) {
 	const unitPath = resolveSystemdUnitPath(env);
 	try {
-		const content = await fs.readFile(unitPath, "utf8");
+		const content = await fs$1.readFile(unitPath, "utf8");
 		let execStart = "";
 		let workingDirectory = "";
 		const inlineEnvironment = {};
@@ -2076,7 +2076,7 @@ function parseEnvironmentFileLine(rawLine) {
 }
 async function readSystemdEnvironmentFile(pathname) {
 	const environment = {};
-	const content = await fs.readFile(pathname, "utf8");
+	const content = await fs$1.readFile(pathname, "utf8");
 	for (const rawLine of content.split(/\r?\n/)) {
 		const parsed = parseEnvironmentFileLine(rawLine);
 		if (!parsed) continue;
@@ -2221,12 +2221,12 @@ async function assertSystemdAvailable(env = process.env) {
 async function installSystemdService({ env, stdout, programArguments, workingDirectory, environment, description }) {
 	await assertSystemdAvailable(env);
 	const unitPath = resolveSystemdUnitPath(env);
-	await fs.mkdir(path.dirname(unitPath), { recursive: true });
+	await fs$1.mkdir(path.dirname(unitPath), { recursive: true });
 	let backedUp = false;
 	try {
-		await fs.access(unitPath);
+		await fs$1.access(unitPath);
 		const backupPath = `${unitPath}.bak`;
-		await fs.copyFile(unitPath, backupPath);
+		await fs$1.copyFile(unitPath, backupPath);
 		backedUp = true;
 	} catch {}
 	const unit = buildSystemdUnit({
@@ -2239,7 +2239,7 @@ async function installSystemdService({ env, stdout, programArguments, workingDir
 		workingDirectory,
 		environment
 	});
-	await fs.writeFile(unitPath, unit, "utf8");
+	await fs$1.writeFile(unitPath, unit, "utf8");
 	const unitName = `${resolveGatewaySystemdServiceName(env.OPENCLAW_PROFILE)}.service`;
 	const reload = await execSystemctlUser(env, ["daemon-reload"]);
 	if (reload.code !== 0) throw new Error(`systemctl daemon-reload failed: ${reload.stderr || reload.stdout}`.trim());
@@ -2265,7 +2265,7 @@ async function uninstallSystemdService({ env, stdout }) {
 	]);
 	const unitPath = resolveSystemdUnitPath(env);
 	try {
-		await fs.unlink(unitPath);
+		await fs$1.unlink(unitPath);
 		stdout.write(`${formatLine("Removed systemd service", unitPath)}\n`);
 	} catch {
 		stdout.write(`Systemd service not found at ${unitPath}\n`);
@@ -2299,7 +2299,7 @@ async function restartSystemdService({ stdout, env }) {
 async function isSystemdServiceEnabled(args) {
 	const env = args.env ?? process.env;
 	try {
-		await fs.access(resolveSystemdUnitPath(env));
+		await fs$1.access(resolveSystemdUnitPath(env));
 	} catch (error) {
 		if (error.code === "ENOENT") return false;
 		throw error;
@@ -2932,7 +2932,7 @@ async function auditSystemdUnit(env, issues) {
 	const unitPath = resolveSystemdUserUnitPath(env);
 	let content = "";
 	try {
-		content = await fs.readFile(unitPath, "utf8");
+		content = await fs$1.readFile(unitPath, "utf8");
 	} catch {
 		return;
 	}
@@ -2960,7 +2960,7 @@ async function auditLaunchdPlist(env, issues) {
 	const plistPath = resolveLaunchAgentPlistPath(env);
 	let content = "";
 	try {
-		content = await fs.readFile(plistPath, "utf8");
+		content = await fs$1.readFile(plistPath, "utf8");
 	} catch {
 		return;
 	}
@@ -3848,7 +3848,7 @@ const GATEWAY_LOG_ERROR_PATTERNS = [
 ];
 async function readLastLogLine(filePath) {
 	try {
-		const lines = (await fs.readFile(filePath, "utf8")).split(/\r?\n/).map((line) => line.trim());
+		const lines = (await fs$1.readFile(filePath, "utf8")).split(/\r?\n/).map((line) => line.trim());
 		for (let i = lines.length - 1; i >= 0; i -= 1) if (lines[i]) return lines[i];
 		return null;
 	} catch {
@@ -3857,8 +3857,8 @@ async function readLastLogLine(filePath) {
 }
 async function readLastGatewayErrorLine(env) {
 	const { stdoutPath, stderrPath } = resolveGatewayLogPaths(env);
-	const stderrRaw = await fs.readFile(stderrPath, "utf8").catch(() => "");
-	const stdoutRaw = await fs.readFile(stdoutPath, "utf8").catch(() => "");
+	const stderrRaw = await fs$1.readFile(stderrPath, "utf8").catch(() => "");
+	const stdoutRaw = await fs$1.readFile(stdoutPath, "utf8").catch(() => "");
 	const lines = [...stderrRaw.split(/\r?\n/), ...stdoutRaw.split(/\r?\n/)].map((line) => line.trim());
 	for (let i = lines.length - 1; i >= 0; i -= 1) {
 		const line = lines[i];
@@ -3936,14 +3936,14 @@ function isLegacyLabel(label) {
 }
 async function readDirEntries(dir) {
 	try {
-		return await fs.readdir(dir);
+		return await fs$1.readdir(dir);
 	} catch {
 		return [];
 	}
 }
 async function readUtf8File(filePath) {
 	try {
-		return await fs.readFile(filePath, "utf8");
+		return await fs$1.readFile(filePath, "utf8");
 	} catch {
 		return null;
 	}

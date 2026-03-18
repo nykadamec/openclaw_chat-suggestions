@@ -1,6 +1,7 @@
 # OpenClaw Chat Suggestions Patch
 
-Target version: `v2026.3.13-beta.1`
+Patch version: `0.1.0`  
+Target OpenClaw version: `v2026.3.13-beta.1`
 
 This patch adds context-aware reply suggestions directly into OpenClaw chat, making it faster to respond, refine phrasing, and continue conversations with less manual typing.
 
